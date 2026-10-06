@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>求职备考管理软件 V1.0</title>
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+</head>
+<body>
+<!-- 登录页 -->
+<div id="login-page" class="login-wrap hidden">
+  <div class="login-card">
+    <div class="login-logo">📋</div>
+    <h1 class="login-title">求职备考管理软件</h1>
+    <p class="login-sub">V1.0 · 本地运行 · 数据保存在本机</p>
+    <div id="login-error" class="form-error hidden"></div>
+    <label class="form-label">用户名</label>
+    <input id="login-username" class="form-input" type="text"
+           placeholder="默认账号：admin" autocomplete="username">
+    <label class="form-label">密码</label>
+    <input id="login-password" class="form-input" type="password"
+           placeholder="默认密码：123456" autocomplete="current-password">
+    <button id="login-btn" class="btn btn-primary btn-block">登 录</button>
+    <p class="login-tip">首次登录后请在「设置」中修改默认密码</p>
+  </div>
+</div>
+
+<!-- 主界面 -->
+<div id="app" class="hidden">
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-logo">📋</span>
+      <div>
+        <div class="brand-name">求职备考管理软件</div>
+        <div class="brand-ver">V1.0</div>
+      </div>
+    </div>
+    <nav class="nav" id="main-nav">
+      <a href="#/dashboard" class="nav-item" data-route="dashboard">
+        <span class="nav-icon">🏠</span>数据总览</a>
+      <a href="#/jobs" class="nav-item" data-route="jobs">
+        <span class="nav-icon">💼</span>求职投递</a>
+      <a href="#/practice" class="nav-item" data-route="practice">
+        <span class="nav-icon">✍️</span>笔试练习</a>
+      <a href="#/materials" class="nav-item" data-route="materials">
+        <span class="nav-icon">📚</span>备考资料</a>
+      <a href="#/todos" class="nav-item" data-route="todos">
+        <span class="nav-icon">✅</span>待办清单</a>
+      <a href="#/exams" class="nav-item" data-route="exams">
+        <span class="nav-icon">📅</span>考试日程</a>
+      <a href="#/settings" class="nav-item" data-route="settings">
+        <span class="nav-icon">⚙️</span>设置</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="user-chip" id="user-chip">👤 <span id="username-label"></span></div>
+      <button id="logout-btn" class="btn btn-ghost btn-sm">退出登录</button>
+    </div>
+  </aside>
+  <main class="main">
+    <div id="view" class="view"></div>
+    <footer class="foot">求职备考管理软件 V1.0 · 数据仅保存在本地计算机</footer>
+  </main>
+</div>
+
+<!-- 通用弹窗 -->
+<div id="modal-mask" class="modal-mask hidden">
+  <div class="modal">
+    <div class="modal-head">
+      <span id="modal-title" class="modal-title">标题</span>
+      <button id="modal-close" class="modal-x">✕</button>
+    </div>
+    <div id="modal-body" class="modal-body"></div>
+    <div class="modal-foot">
+      <button id="modal-cancel" class="btn">取消</button>
+      <button id="modal-ok" class="btn btn-primary">确定</button>
+    </div>
+  </div>
+</div>
+
+<!-- 轻提示 -->
+<div id="toast" class="toast hidden"></div>
+
+<script src="/static/js/app.js"></script>
+<script src="/static/js/view_dashboard.js"></script>
+<script src="/static/js/view_jobs.js"></script>
+<script src="/static/js/view_practice.js"></script>
+<script src="/static/js/view_materials.js"></script>
+<script src="/static/js/view_todos.js"></script>
+<script src="/static/js/view_exams.js"></script>
+<script src="/static/js/view_settings.js"></script>
+</body>
+</html>
