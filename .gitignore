@@ -1,0 +1,12 @@
+# 数据库与密钥（本机数据，不入库）
+data/
+# Python 缓存
+__pycache__/
+*.pyc
+# 鉴别材料生成中间文件
+docs/*.docx
+docs/*.txt
+docs/gen_*.py
+docs/form_fields.py
+# 临时检查目录
+inspect/
